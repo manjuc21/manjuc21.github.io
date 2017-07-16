@@ -1,17 +1,45 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>GUARDIANS</title>
+	<meta charset="utf-8" http-equiv="Content-Type" content="text/html">
+	<title>canvas text example</title>
+	<style type="text/css">
+		canvas {border: 1px solid black;}
+	</style>
+	<script type="text/javascript">
+		
+window.onload=function(){
+	var canvas=document.getElementById("canvas");
+	var context=canvas.getContext("2d");
+	var img=new Image();
+	img.src="dog.jpg"
+		img.onload=function(){
+			context.linewidth=5;
+			context.drawImage(img,0,0,400,400);
+			context.beginPath();
+			context.linewidth=5;
+			context.fillStyle="orange";
+			context.strokeStyle="black";
+			context.rect(50,340,300,50);
+			context.fill();
+			context.stroke();
+			context.linewidth=2;
+			context.font='40 px sans-serif';
+			context.strokeStyle="black";
+			context.fillStyle="white";
+			context.fillText("canvas is great",60,375);
+			context.shadowoffsetX=10;
+			context.shadowoffsetY=5;
+			context.shadowColor="rgba(0,48,48,0,5)";
+			context.shadowBlur=5;
+			context.strokeText("canvas is great",60,375);
+		}
+	}	
+	</script>
 </head>
 <body>
-<h1>WELCOME ALL GUARDIANS</h1>
-<h2>this isthe web page for k12 guardians players </h2>
-<nav><ul>link 1</ul>
-	<ul>
-		<ul>link2</ul>
-		<ul>lionk 3</ul>
-		<ul>link4</ul>
-		<ul>link5</ul>
-	</ul></nav>
+<canvas id="canvas" width="400" height="400">
+	<STRONG>canvas required border</STRONG>
+</canvas>
 </body>
 </html>
